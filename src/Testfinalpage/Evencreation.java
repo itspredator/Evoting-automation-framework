@@ -1,5 +1,7 @@
 package Testfinalpage;
 
+import org.openqa.selenium.WebDriver;
+
 public class Evencreation {
 
 	String ISIN ;
@@ -14,9 +16,10 @@ public class Evencreation {
 	String Evoting_Start_Time;
 	String Evoting_End_Time;
 	String General_Meeting_Start_Time;
+	WebDriver driver;
 
 	public Evencreation() {
-		super();
+	super();	
 	}
 
 

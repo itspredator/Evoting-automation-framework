@@ -7,20 +7,12 @@ import java.util.Properties;
 
 public class ConfigReader {
 
-	private static ConfigReader instance=null;
-	private Properties prop;
+	private static Properties prop;
 
 
-
-
-	//case of encapsulation and this class used to load the config.properties file
-	// return properties prop object
-	@SuppressWarnings("unused")
-	private ConfigReader() 
+	public static Properties getProperties()
 	{
-
-		// TODO Auto-generated constructor stub
-
+		
 		prop=new Properties();
 		try {
 			FileInputStream ip = new FileInputStream("D:\\Pinkesh\\EVOTINGAUTOMATION\\configuration\\config.properties");
@@ -32,17 +24,16 @@ public class ConfigReader {
 
 			e.printStackTrace();
 		}
+		
+		return prop;
+	}
+	
+	public ConfigReader() {
+		super();
+		getProperties();
 	}
 
-	public static ConfigReader getinstance()
-	{
-		if (instance==null)
-		{
-			instance=new ConfigReader();
-		}
-		return instance;
-	}
-	public String getProprty(String key)
+	public static String getProprty(String key)
 	{
 		return prop.getProperty(key);
 	}
