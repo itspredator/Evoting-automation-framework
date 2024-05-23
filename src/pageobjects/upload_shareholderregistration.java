@@ -1,17 +1,33 @@
 package pageobjects;
 
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.SQLException;
 import java.time.Duration;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.testng.asserts.SoftAssert;
 
+import com.github.dockerjava.api.command.SyncDockerCmd;
+
+import service.DatabaseServiceImpl;
+import service.Details;
 import utility.ConfigReader;
 
 public class upload_shareholderregistration {
 	static WebDriver driver;
+	static List<String> dataHolder = new ArrayList<>();
+
+	static String header, even;
+	static Details details;
 
 	public upload_shareholderregistration(WebDriver driver) {
 
@@ -35,65 +51,68 @@ public class upload_shareholderregistration {
 	By resetbutton = By.xpath("//tbody/tr[2]/td[1]/input[2]");
 	String filesucessmsg = "File uploaded successfully with Process id";
 
-	public void uploadshareholderdropdown(String evenNo) throws IOException, ClassNotFoundException, SQLException {
+	public static void filegeneration(String evenNo) throws ClassNotFoundException, IOException, SQLException, InterruptedException
+	{
+		sharholderfiletoupload.filereadutility(evenNo);
+		Thread.sleep(10000);
 
-		try {
-			
-			sharholderfiletoupload.filereadutility(evenNo);
-			
-		} finally {
+	}
+	public void uploadshareholderdropdown() throws IOException, ClassNotFoundException, SQLException, InterruptedException 
+	{
 
-			System.out.println(upload_shareholderregistration.class);
 
-			ConfigReader configreader = new ConfigReader();
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+		System.out.println(upload_shareholderregistration.class);
 
-			driver.findElement(evtngdropdown).click();
-			driver.findElement(drpdownshldrregfile).click();
-			System.out.println("-------inside upload shareholder file module------");
-			String upload_type = ConfigReader.getProprty("Upload_Type");
-			System.out.println("The selected upload type \t" + upload_type);
-			String actualtitle = driver.getTitle();
-			String expetitle = "Upload Registrar";
-			SoftAssert sf = new SoftAssert();
-			sf.assertEquals(expetitle, actualtitle);
-			driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+		ConfigReader configreader = new ConfigReader();
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 
-			if (upload_type.equals("First_upload")) {
+		driver.findElement(evtngdropdown).click();
+		driver.findElement(drpdownshldrregfile).click();
+		System.out.println("-------inside upload shareholder file module------");
+		String upload_type = ConfigReader.getProprty("Upload_Type");
+		System.out.println("The selected upload type \t" + upload_type);
+		String actualtitle = driver.getTitle();
+		String expetitle = "Upload Registrar";
+		SoftAssert sf = new SoftAssert();
+		sf.assertEquals(expetitle, actualtitle);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 
-				driver.findElement(firstcutoffuploadradiobtn).click();
-				driver.findElement(selectfiletoupload).sendKeys("D:\\filetoupload\\output.zip");
-				driver.findElement(submitbutton).click();
-				if (driver.getPageSource().contains("Unable to read file"))
+		if (upload_type.equals("First_upload")) {
 
-				{
-					System.out.println("file contains error");
-					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-				} else {
-					System.out.println("file uploaded sucessfully with first uplaod");
-				}
-				
+			driver.findElement(firstcutoffuploadradiobtn).click();
+			driver.findElement(selectfiletoupload).sendKeys("D:\\filetoupload\\output.zip");
+			driver.findElement(submitbutton).click();
+			if (driver.getPageSource().contains("Unable to read file"))
+
+			{
+				System.out.println("file contains error");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+			} else {
+				System.out.println("file uploaded sucessfully with first uplaod");
 			}
 
-			else if (upload_type.equals("Second_upload")) {
+		}
 
-				driver.findElement(seconduplaodradiobtn).click();
-				driver.findElement(selectfiletoupload).sendKeys("D:\\filetoupload\\output.zip");
-				driver.findElement(ckboxlastfileflag).click();
-				driver.findElement(submitbutton).click();
+		else if (upload_type.equals("Second_upload")) {
 
-				if (driver.getPageSource().contains("Unable to read file")) {
+			driver.findElement(seconduplaodradiobtn).click();
+			driver.findElement(selectfiletoupload).sendKeys("D:\\filetoupload\\output.zip");
+			driver.findElement(ckboxlastfileflag).click();
+			driver.findElement(submitbutton).click();
 
-					System.out.println("file contains error");
-					driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
-				} else {
-					System.out.println("file uploaded sucessfully with second uplaod");
+			if (driver.getPageSource().contains("Unable to read file")) {
 
-				}
+				System.out.println("file contains error");
+				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
+			} else {
+				System.out.println("file uploaded sucessfully with second uplaod");
 
 			}
 
 		}
-		
+
 	}
+
 }
+
+

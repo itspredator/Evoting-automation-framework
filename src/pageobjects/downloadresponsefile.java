@@ -26,7 +26,7 @@ public class downloadresponsefile
 		driver.findElement(evotingmenu).click();
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 		driver.findElement(downresponsedropdown).click();
-		
+		System.out.println("method clickondownloadresponsefile");
 	}
 	@SuppressWarnings("deprecation")
 	public void downaloderrorandoutfile()
@@ -39,7 +39,7 @@ public class downloadresponsefile
 		driver.manage().timeouts().implicitlyWait(5000, TimeUnit.MILLISECONDS);
 		driver.navigate().back();
 		driver.findElement(outfiilename).click();
-		System.out.println("method reach");
+		System.out.println("method downaloderrorandoutfile");
 	}
 }
 

@@ -5,7 +5,7 @@
     <classes>
       <class name="Testfinalpage.Testpage">
         <methods>
-          <include name="testclickondownloadresponsefile"/>
+          <include name="testclickondownlaodevenwsepinmailerfile"/>
         </methods>
       </class> <!-- Testfinalpage.Testpage -->
     </classes>

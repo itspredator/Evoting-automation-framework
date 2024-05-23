@@ -41,7 +41,7 @@ public class createeven extends Evencreation {
 	public static String extractionofeven;
 	createeven gEven;
 	public static sharholderfiletoupload  sharholderfiletoupload;
-	
+
 
 
 	By evtngdropdown = By.xpath("//font[contains(text(),'e-Voting')]");
@@ -108,8 +108,8 @@ public class createeven extends Evencreation {
 		for (Evencreation evenObj : even) {
 
 			if (evenObj.getISIN().trim() != null && evenObj.getISIN().trim().length() != 0) {
-				
-				
+
+
 				System.out.println("Evencreation : " + even.toString());
 				driver.findElement(evtngdropdown).click();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
@@ -152,23 +152,13 @@ public class createeven extends Evencreation {
 						rb.keyPress(KeyEvent.VK_TAB);
 						driver.findElement(inputboxendtime).sendKeys(evenObj.getEvoting_End_Time());
 						rb.keyPress(KeyEvent.VK_TAB);
-
-						/*
-						 * driver.findElement(logofilebrowse).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Desktop\\IMAGES\\111436_7.JPG");
-						 * driver.findElement(resolutionfileupload).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Downloads\\INDUS_NOTICE.pdf");
-						 * driver.findElement(uploadannexture).
-						 * sendKeys("C:\\Users\\Pinkeshc\\Downloads\\108080 (7).pdf");
-						 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-						 */
 						driver.findElement(inputboxresolutionTitle).sendKeys("postal ballot- secrestary  anurag verma");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 						driver.findElement(inputboxresolutionDesc).sendKeys("postal ballot- secrestary  anurag verma@");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 						driver.findElement(submitbutton).click();
 
-						Thread.sleep(8000);
+						Thread.sleep(4000);
 						try {
 
 							Alert alert = driver.switchTo().alert();
@@ -186,8 +176,8 @@ public class createeven extends Evencreation {
 						JavascriptExecutor js = (JavascriptExecutor) driver;
 						js.executeScript("document.getElementById('searchButton').click();");
 					}
-					
-					
+
+
 				} else if (Voting_Type.equals("General_meeting")) {
 					try {
 						driver.findElement(votetygeneralmeet).click();
@@ -210,22 +200,12 @@ public class createeven extends Evencreation {
 						rb.keyPress(KeyEvent.VK_TAB);
 						driver.findElement(inputboxendtime).sendKeys(evenObj.getEvoting_End_Time());
 						rb.keyPress(KeyEvent.VK_TAB);
-
-						/*
-						 * driver.findElement(logofilebrowse).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Desktop\\IMAGES\\111436_7.JPG");
-						 * driver.findElement(resolutionfileupload).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Downloads\\INDUS_NOTICE.pdf");
-						 * driver.findElement(uploadannexture).
-						 * sendKeys("C:\\Users\\Pinkeshc\\Downloads\\108080 (7).pdf");
-						 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-						 */
 						driver.findElement(inputboxresolutionTitle).sendKeys("postal ballot- secrestary  anurag verma");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 						driver.findElement(inputboxresolutionDesc).sendKeys("postal ballot- secrestary  anurag verma@");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 						driver.findElement(submitbutton).click();
-						Thread.sleep(8000);
+						Thread.sleep(4000);
 						try {
 
 							Alert alert = driver.switchTo().alert();
@@ -270,23 +250,13 @@ public class createeven extends Evencreation {
 						// rb.keyPress(KeyEvent.VK_TAB);
 						driver.findElement(inputboxendtime).sendKeys(evenObj.getEvoting_End_Time());
 						rb.keyPress(KeyEvent.VK_TAB);
-
-						/*
-						 * driver.findElement(logofilebrowse).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Desktop\\IMAGES\\111436_7.JPG");
-						 * driver.findElement(resolutionfileupload).sendKeys(
-						 * "C:\\Users\\Pinkeshc\\Downloads\\INDUS_NOTICE.pdf");
-						 * driver.findElement(uploadannexture).
-						 * sendKeys("C:\\Users\\Pinkeshc\\Downloads\\108080 (7).pdf");
-						 * driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
-						 */
 						driver.findElement(inputboxnoofvacancy).sendKeys("1");
 						driver.findElement(inputboxresolutionTitle).sendKeys("Direction election-Pinkesh Choudhary");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 						driver.findElement(inputboxresolutionDesc).sendKeys("election of directores");
 						driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 						driver.findElement(submitbutton).click();
-						Thread.sleep(8000);
+						Thread.sleep(4000);
 						try {
 
 							Alert alert = driver.switchTo().alert();
@@ -304,7 +274,7 @@ public class createeven extends Evencreation {
 
 						JavascriptExecutor js = (JavascriptExecutor) driver;
 						js.executeScript("document.getElementById('searchButton').click();");
-						
+
 						Thread.sleep(60000);
 					} catch (DateTimeException e) {
 						e.getStackTrace();
@@ -320,7 +290,7 @@ public class createeven extends Evencreation {
 		return gEven;
 
 	}
-	
+
 
 	// TODO Auto-generated method stub
 }
