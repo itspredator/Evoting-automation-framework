@@ -5,6 +5,10 @@
     <classes>
       <class name="Testfinalpage.Testpage">
         <methods>
+          <include name="testclickondownloadresponsefile"/>
+          <include name="testrtafilegeneration"/>
+          <include name="testevenformfill"/>
+          <include name="testuploadshareholderdropdown"/>
           <include name="testclickondownlaodevenwsepinmailerfile"/>
         </methods>
       </class> <!-- Testfinalpage.Testpage -->

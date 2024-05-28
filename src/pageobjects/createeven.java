@@ -18,6 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 import java.util.Random;
+import java.util.concurrent.locks.Condition;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
@@ -83,6 +84,13 @@ public class createeven extends Evencreation {
 	By evennogettext = By.xpath(
 			"/html[1]/body[1]/table[1]/tbody[1]/tr[3]/td[1]/center[1]/table[1]/tbody[1]/tr[3]/td[1]/font[2]/span[1]/a[1]");
 
+	
+
+	public createeven() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
 	public createeven(WebDriver driver) {
 		this.driver = driver;
 	}
@@ -99,18 +107,16 @@ public class createeven extends Evencreation {
 		createeven.extractionofeven = extractionofeven;
 	}
 
-	public createeven evenformfill(List<Evencreation> even) throws InterruptedException, AWTException, ClassNotFoundException, IOException, SQLException {
+	public createeven evenformfill(Evencreation evenObj) throws InterruptedException, AWTException, ClassNotFoundException, IOException, SQLException {
 
 		ConfigReader configreader = new ConfigReader();
 		String Voting_Type = ConfigReader.getProprty("Voting_Type");
 		System.out.println("The selected Voting type \t" + Voting_Type);
 
-		for (Evencreation evenObj : even) {
-
+		
+		
 			if (evenObj.getISIN().trim() != null && evenObj.getISIN().trim().length() != 0) {
 
-
-				System.out.println("Evencreation : " + even.toString());
 				driver.findElement(evtngdropdown).click();
 				driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(6));
 				driver.findElement(registerevtngdtls).click();
@@ -282,11 +288,7 @@ public class createeven extends Evencreation {
 					}
 				}
 			}
-			else {
-				break;
-			}
-
-		}
+			
 		return gEven;
 
 	}

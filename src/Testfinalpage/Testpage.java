@@ -60,21 +60,21 @@ public class Testpage {
 
 	}
 	
-	@Test(priority = 1)
-   public void mainshr() throws IOException, InterruptedException, AWTException, ClassNotFoundException, SQLException
-   {
-		
-		testpages();
-		
-		
-		for (Evencreation evenObj: evencreation) {
-			
-			testevenformfill();
-			
-			
-		}
-   }
-	
+//	@Test(priority = 1)
+//   public void mainshr() throws IOException, InterruptedException, AWTException, ClassNotFoundException, SQLException
+//   {
+//		
+//		testpages();
+//		
+//		
+//		for (Evencreation evenObj: evencreation) {
+//			
+//			testevenformfill();
+//			
+//			
+//		}
+//   }
+//	
 	
 	@Test(priority = 1)
 	public void testpages() throws IOException, InterruptedException, AWTException {
@@ -83,7 +83,7 @@ public class Testpage {
 	
 	@Test(priority = 2)
 	public void testevenformfill() throws InterruptedException, AWTException, ClassNotFoundException, IOException, SQLException {
-		even = creven.evenformfill(evencreation);
+		even = creven.evenformfill(evencreation.get(0));
 
 	}  
 	@Test(priority = 3)

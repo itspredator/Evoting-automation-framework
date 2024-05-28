@@ -33,23 +33,24 @@ public class CapchaReader {
 		robot.keyPress(KeyEvent.VK_ENTER);
 		robot.keyRelease(KeyEvent.VK_ENTER);
 
-		Thread.sleep(5000);
+		Thread.sleep(8000);
 
-		x = 1200;
-		y = 350;
+		x = 1150;
+		y = 300;//350
 		robot.mouseMove(x, y);
 
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
-
+		
 		Thread.sleep(6000);
 
 		x = 1250;
-		y = 355;
+		y = 335;
 		robot.mouseMove(x, y);
 
 		robot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
 		robot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
+		Thread.sleep(4000);
 
 		// driver.findElement(rtalogincaptaimage);
 		WebElement captaText = driver.findElement(rtacaptchainnputbox);

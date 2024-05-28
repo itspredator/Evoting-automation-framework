@@ -54,7 +54,7 @@ public class upload_shareholderregistration {
 	public static void filegeneration(String evenNo) throws ClassNotFoundException, IOException, SQLException, InterruptedException
 	{
 		sharholderfiletoupload.filereadutility(evenNo);
-		Thread.sleep(10000);
+		Thread.sleep(6000);
 
 	}
 	public void uploadshareholderdropdown() throws IOException, ClassNotFoundException, SQLException, InterruptedException 
@@ -80,6 +80,7 @@ public class upload_shareholderregistration {
 		if (upload_type.equals("First_upload")) {
 
 			driver.findElement(firstcutoffuploadradiobtn).click();
+
 			driver.findElement(selectfiletoupload).sendKeys("D:\\filetoupload\\output.zip");
 			driver.findElement(submitbutton).click();
 			if (driver.getPageSource().contains("Unable to read file"))

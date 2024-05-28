@@ -27,7 +27,8 @@ public class downlaodpinmailer
 	By confirmpinmailerbutton=By.xpath("//input[@id='pinbutton']");
 	By backonconfirmpinmailer=By.xpath("//input[@id='refresh_button']");
 	By clickongeneratefile=By.xpath("//td[@id='tableCellID']");
-	By Fileprocessstatus=By.cssSelector("table.outline:nth-child(2) td:nth-child(1) table.subOutline:nth-child(2) tbody:nth-child(1) tr:nth-child(2) > td.subOutline:nth-child(6)");
+	By Fileprocessstatus=By.xpath("/html[1]/body[1]/table[1]/tbody[1]/tr[3]/td[1]/form[1]/table[1]/tbody[1]/tr[2]/td[1]/table[1]/tbody[1]/tr[2]/td[6]");
+	By Homepageclick=By.xpath("//strong[contains(text(),'Home')]");
 	@SuppressWarnings("deprecation")
 	public void clickondownlaodevenwsepinmailerfile(createeven even)
 	{
@@ -71,7 +72,7 @@ public class downlaodpinmailer
 				
 				String actualStatus=driver.findElement(Fileprocessstatus).getText();
 				System.out.println("filestatus:"+actualStatus);
-				while (actualStatus.equals("File Under Processing"))
+				while (actualStatus.equals("File Under Processing") || actualStatus.equals("Pin Mailer Requested"))
 				{
 					
 					driver.findElement(refreshstatusbutton).click();
@@ -86,15 +87,18 @@ public class downlaodpinmailer
 				// explicit wait - to wait for the compose button to be click-able
 				//driver.manage().timeouts().implicitlyWait(4, TimeUnit.SECONDS);
 				//driver.findElement(refreshstatusbutton).click();
-				driver.findElement(clickongeneratefile).click();
+				//driver.findElement(clickongeneratefile).click();
+				driver.findElement(Homepageclick).click();
 				System.out.println("without enabled method");
 
+				Thread.sleep(7000);
 			
 
 		}
 		else
 		{
 			System.out.println("even id not matched to generate the file");
+			driver.findElement(Homepageclick).click();
 		}
 
 
