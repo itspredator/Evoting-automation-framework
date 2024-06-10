@@ -1,4 +1,4 @@
-package pageobjects;
+package shr;
 
 import java.util.concurrent.TimeUnit;
 

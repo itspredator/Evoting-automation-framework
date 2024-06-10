@@ -16,6 +16,7 @@ public class DatabaseServiceImpl implements DatabaseService{
 	public static Connection connection;
 	public static Statement statement;
 	public static ResultSet resultSet;
+	public static int status;
 
 	public DatabaseServiceImpl() throws ClassNotFoundException, SQLException {
 		super();
@@ -56,6 +57,27 @@ public class DatabaseServiceImpl implements DatabaseService{
 		resultSet.next();
 
 		return resultSet.getInt("recordCount");
+	}
+
+
+
+	@Override
+	public String FetchShareHolderId(String Query) throws SQLException {
+		statement = (Statement) connection.createStatement();
+		resultSet = statement.executeQuery(Query);
+		resultSet.next();
+		return resultSet.getObject("sem_user_id").toString();
+
+	}
+
+
+
+	@Override
+	public int UpdateCommonpassword(String Query) throws SQLException {
+		statement = (Statement) connection.createStatement();
+		status = statement.executeUpdate(Query);
+
+		return status;
 	}
 
 }

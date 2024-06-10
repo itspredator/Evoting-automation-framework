@@ -1,37 +1,91 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="6" passed="6" failed="0" skipped="0">
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-05-28T15:57:08 IST" name="Default suite" finished-at="2024-05-28T15:59:20 IST" duration-ms="131399">
+  <suite started-at="2024-06-10T11:41:32 IST" name="Default suite" finished-at="2024-06-10T11:42:14 IST" duration-ms="42851">
     <groups>
     </groups>
-    <test started-at="2024-05-28T15:57:08 IST" name="Default test" finished-at="2024-05-28T15:59:20 IST" duration-ms="131399">
-      <class name="Testfinalpage.Testpage">
-        <test-method signature="testpages()[pri:1, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:08 IST" name="testpages" finished-at="2024-05-28T15:57:35 IST" duration-ms="26920" status="PASS">
+    <test started-at="2024-06-10T11:41:32 IST" name="Default test" finished-at="2024-06-10T11:42:14 IST" duration-ms="42851">
+      <class name="Testfinalpage.Testpagemember">
+        <test-method signature="mainshr()[pri:1, instance:Testfinalpage.Testpagemember@534ca02b]" started-at="2024-06-10T11:41:32 IST" name="mainshr" finished-at="2024-06-10T11:41:32 IST" duration-ms="608" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testpages -->
-        <test-method signature="testevenformfill()[pri:2, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:35 IST" name="testevenformfill" finished-at="2024-05-28T15:57:44 IST" duration-ms="8710" status="PASS">
+        </test-method> <!-- mainshr -->
+        <test-method signature="testmemberlogin()[pri:2, instance:Testfinalpage.Testpagemember@534ca02b]" started-at="2024-06-10T11:41:32 IST" name="testmemberlogin" finished-at="2024-06-10T11:42:14 IST" duration-ms="42147" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='userId']"}
+  (Session info: chrome=125.0.6422.142)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d87e07e5aac5bc8a80c5d0528a7e14, findElement {using=xpath, value=//input[@id='userId']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Pinkeshc\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56593}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56593/devtoo..., se:cdpVersion: 125.0.6422.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d87e07e5aac5bc8a80c5d0528a7e14]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//input[@id='userId']"}
+  (Session info: chrome=125.0.6422.142)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.17.0', revision: 'e52b1be057*'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.11'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [e6d87e07e5aac5bc8a80c5d0528a7e14, findElement {using=xpath, value=//input[@id='userId']}]
+Capabilities {acceptInsecureCerts: true, browserName: chrome, browserVersion: 125.0.6422.142, chrome: {chromedriverVersion: 125.0.6422.141 (4b1e8393712..., userDataDir: C:\Users\Pinkeshc\AppData\L...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:56593}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:56593/devtoo..., se:cdpVersion: 125.0.6422.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: e6d87e07e5aac5bc8a80c5d0528a7e14
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(Unknown Source)
+at java.base/java.lang.reflect.Constructor.newInstance(Unknown Source)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:185)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:134)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:519)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:356)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at utility.loginpage.login(loginpage.java:68)
+at Testfinalpage.Testpagemember.testmemberlogin(Testpagemember.java:94)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+at java.base/java.lang.reflect.Method.invoke(Unknown Source)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+at java.base/java.util.ArrayList.forEach(Unknown Source)
+at org.testng.TestRunner.privateRun(TestRunner.java:848)
+at org.testng.TestRunner.run(TestRunner.java:621)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+at org.testng.TestNG.runSuites(TestNG.java:1114)
+at org.testng.TestNG.run(TestNG.java:1082)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testevenformfill -->
-        <test-method signature="testrtafilegeneration()[pri:3, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:44 IST" name="testrtafilegeneration" finished-at="2024-05-28T15:57:51 IST" duration-ms="7176" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testrtafilegeneration -->
-        <test-method signature="testuploadshareholderdropdown()[pri:4, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:51 IST" name="testuploadshareholderdropdown" finished-at="2024-05-28T15:57:54 IST" duration-ms="2855" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testuploadshareholderdropdown -->
-        <test-method signature="testclickondownloadresponsefile()[pri:5, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:54 IST" name="testclickondownloadresponsefile" finished-at="2024-05-28T15:57:59 IST" duration-ms="5035" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testclickondownloadresponsefile -->
-        <test-method signature="testclickondownlaodevenwsepinmailerfile()[pri:6, instance:Testfinalpage.Testpage@320a8ebf]" started-at="2024-05-28T15:57:59 IST" name="testclickondownlaodevenwsepinmailerfile" finished-at="2024-05-28T15:59:20 IST" duration-ms="80618" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- testclickondownlaodevenwsepinmailerfile -->
-      </class> <!-- Testfinalpage.Testpage -->
+        </test-method> <!-- testmemberlogin -->
+      </class> <!-- Testfinalpage.Testpagemember -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

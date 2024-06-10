@@ -3,15 +3,11 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="Testfinalpage.Testpage">
+      <class name="Testfinalpage.Testpagemember">
         <methods>
-          <include name="testclickondownloadresponsefile"/>
-          <include name="testrtafilegeneration"/>
-          <include name="testevenformfill"/>
-          <include name="testuploadshareholderdropdown"/>
-          <include name="testclickondownlaodevenwsepinmailerfile"/>
+          <include name="testmemberlogin"/>
         </methods>
-      </class> <!-- Testfinalpage.Testpage -->
+      </class> <!-- Testfinalpage.Testpagemember -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

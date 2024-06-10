@@ -1,4 +1,4 @@
-package pageobjects;
+package shr;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -29,7 +29,7 @@ import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
-import Testfinalpage.Evencreation;
+
 import service.DatabaseServiceImpl;
 import service.Details;
 import utility.ConfigReader;

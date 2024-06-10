@@ -1,4 +1,4 @@
-package pageobjects;
+package shr;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -110,6 +110,7 @@ public class sharholderfiletoupload extends DatabaseServiceImpl {
 		br.write(System.lineSeparator());
 
 		System.out.println(dataHolder.toString());
+		System.out.println(dataHolder.size());
 
 		for (int i = 0; i < dataHolder.size(); i++) {
 
@@ -122,6 +123,7 @@ public class sharholderfiletoupload extends DatabaseServiceImpl {
 		}
 
 		br.close();
+		dataHolder.clear();
 
 	}
 

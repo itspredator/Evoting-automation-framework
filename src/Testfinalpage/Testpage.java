@@ -11,15 +11,16 @@ import org.openqa.selenium.WebDriver;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Test;
-import pageobjects.RTA_loginpage;
-import pageobjects.createeven;
-import pageobjects.downlaodpinmailer;
-import pageobjects.downloadresponsefile;
-import pageobjects.sharholderfiletoupload;
-import pageobjects.upload_shareholderregistration;
+
+import shr.Evencreation;
+import shr.createeven;
+import shr.downlaodpinmailer;
+import shr.downloadresponsefile;
+import shr.upload_shareholderregistration;
 import utility.ConfigReader;
 import utility.DriverFactory;
 import utility.datareader;
+import utility.loginpage;
 
 public class Testpage {
 
@@ -27,7 +28,7 @@ public class Testpage {
 	static WebDriver driver;
 	ConfigReader configReader;
 	static List<Evencreation> evencreation;
-	RTA_loginpage rtal;
+	loginpage login;
 	createeven creven;
 	upload_shareholderregistration usreg;
 	downloadresponsefile dr;
@@ -39,7 +40,7 @@ public class Testpage {
 		super();
 
 		driver = setup();
-		rtal = new RTA_loginpage(driver);
+		login = new loginpage(driver);
 		creven = new createeven(driver);
 		usreg = new upload_shareholderregistration(driver);
 		dr = new downloadresponsefile(driver);
@@ -60,39 +61,43 @@ public class Testpage {
 
 	}
 	
-//	@Test(priority = 1)
-//   public void mainshr() throws IOException, InterruptedException, AWTException, ClassNotFoundException, SQLException
-//   {
-//		
-//		testpages();
-//		
-//		
-//		for (Evencreation evenObj: evencreation) {
-//			
-//			testevenformfill();
-//			
-//			
-//		}
-//   }
-//	
-	
 	@Test(priority = 1)
+   public void mainshr() throws IOException, InterruptedException, AWTException, ClassNotFoundException, SQLException
+   {
+		
+		testpages();
+		
+		
+		for (Evencreation evenObj: evencreation) {
+			
+			testevenformfill(evenObj);
+			testrtafilegeneration() ;
+			testuploadshareholderdropdown();
+			testclickondownloadresponsefile();
+			testclickondownlaodevenwsepinmailerfile();
+			
+			
+		}
+   }
+	
+	
+	//@Test(priority = 1)
 	public void testpages() throws IOException, InterruptedException, AWTException {
-		rtal.rtalogin();
+		login.login("shr1", "nsdl@12345","RTA");
 	}
 	
-	@Test(priority = 2)
-	public void testevenformfill() throws InterruptedException, AWTException, ClassNotFoundException, IOException, SQLException {
-		even = creven.evenformfill(evencreation.get(0));
+	//@Test(priority = 2)
+	public void testevenformfill(Evencreation evenObj) throws InterruptedException, AWTException, ClassNotFoundException, IOException, SQLException {
+		even = creven.evenformfill(evenObj);
 
 	}  
-	@Test(priority = 3)
+	//@Test(priority = 3)
 	public void testrtafilegeneration() throws ClassNotFoundException, IOException, SQLException, InterruptedException
 	{
 		usreg.filegeneration(even.getExtractionofeven());
 	}
 	
-	@Test(priority = 4)
+	//@Test(priority = 4)
 	
 	public void testuploadshareholderdropdown() throws ClassNotFoundException, IOException, SQLException, InterruptedException
 	{
@@ -101,14 +106,14 @@ public class Testpage {
 		
 	
 
-	@Test(priority = 5)
+	//@Test(priority = 5)
 	public void testclickondownloadresponsefile() throws InterruptedException, AWTException {
 		dr.clickondownloadresponsefile();
 		dr.downaloderrorandoutfile();
 
 	}
 
-	@Test(priority = 6)
+	//@Test(priority = 6)
 	public void testclickondownlaodevenwsepinmailerfile() throws InterruptedException, AWTException {
 		dpm.clickondownlaodevenwsepinmailerfile(even);
 		dpm.generatepinmailerfile(even);

@@ -9,4 +9,7 @@ public interface DatabaseService {
 	
 	public int isExists(String batchId) throws SQLException;
 
+	public String FetchShareHolderId(String Query) throws SQLException;
+	
+	public int UpdateCommonpassword(String Query) throws SQLException;
 }
